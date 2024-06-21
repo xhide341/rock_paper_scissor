@@ -64,3 +64,6 @@ function playGame() {
         alert("It's a tie!");
     }
 }
+
+
+playGame();
