@@ -10,7 +10,6 @@ body {
     color: black;
     font-family: "Roboto", sans-serif;
     padding: 16px;
-    margin: 0;
 }
 
 h1 {
@@ -43,16 +42,9 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 500px;
+    height: 400px;
     align-items: center;
     flex: 1;
-    position: relative;
-}
-
-.middle-container h2:not(.display-winner) {
-    position: absolute;
-    top: 25%;
-    transform: translateY(-50%);
 }
 
 .player-container img,
@@ -70,8 +62,6 @@ h2 {
     display: flex;
     justify-content: center;
     font-size: 36px;
-    margin: 0;
-    padding: 0;
 }
 
 .names {
@@ -89,8 +79,6 @@ h2 {
     margin-bottom: 36px;
     padding: 0;
     color: darkblue;
-    position: absolute;
-    bottom: 0;
 }
 
 .choices {
@@ -100,15 +88,11 @@ h2 {
     margin: 0;
     padding: 0;
     gap: 16px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 button {
     display: flex;
     border-radius: 8px;
-    width: 150px;
     max-width: 150px;
     height: auto;
     flex-direction: column;

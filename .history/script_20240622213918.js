@@ -4,7 +4,6 @@ const computerHealth = document.querySelector(".hearts-computer");
 const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorButton = document.querySelector(".scissor");
-const roundCounter = document.querySelector(".round-counter");
 
 const choices = ["rock", "paper", "scissors"];
 let scores = { computer: 0, human: 0, tie: 0 };
@@ -36,85 +35,48 @@ function playRound(humanSelection, computerSelection) {
 }
 
 function updateHealth() {
-    const humanHearts = document.querySelectorAll('.hearts-human .heart');
-    const computerHearts = document.querySelectorAll('.hearts-computer .heart');
-
-    humanHearts.forEach((heart, index) => {
-        if (index < 5 - scores.computer) {
-            heart.style.opacity = '1';
-        } else {
-            heart.style.opacity = '0.2';
-        }
-    });
-
-    computerHearts.forEach((heart, index) => {
-        if (index < 5 - scores.human) {
-            heart.style.opacity = '1';
-        } else {
-            heart.style.opacity = '0.2';
-        }
-    });
+    humanHealth.textContent = "❤".repeat(5 - scores.computer);
+    computerHealth.textContent = "❤".repeat(5 - scores.human);
 }
 
-function updateRoundCounter(index) {
-    return roundCounter.textContent = "Round: " + index; 
-}
-
-function displayRoundWinner(result) {
+function displayRoundWinner() {
     if (result === "human") {
-        winnerText.textContent = "You won the round!";
-        winnerText.setAttribute("style","color: green;");
+        winnerText.textContent = "Human wins the round!";
     } else if (result === "computer") {
-        winnerText.textContent = "Computer wins the round!";
-        winnerText.setAttribute("style","color: red;");
+        winnerText.textContent = "Computer wins the rounds!";
     } else {
         winnerText.textContent = "You both tie this round!";
-        winnerText.setAttribute("style","color: black;");
     }
 }
 
 function displayGameWinner() {
     if (scores.computer > scores.human) {
         winnerText.textContent = "Computer wins the game!";
-        winnerText.setAttribute("style","color: red;");
     } else if (scores.computer < scores.human) {
-        winnerText.textContent = "You won the game!";
-        winnerText.setAttribute("style","color: green;");
+        winnerText.textContent = "Human wins the game!";
     } else {
         winnerText.textContent = "It's a tie!";
-        winnerText.setAttribute("style","color: black;");
     }
-}
-
-function askToPlayAgain() {
-    setTimeout(() => {
-        const playAgain = confirm("Do you want to play again?");
-        if (playAgain) {
-            resetGame();
-        }
-    }, 100);
 }
 
 function resetGame() {
     scores = { computer: 0, human: 0, tie: 0 };
     roundsPlayed = 0;
     updateHealth();
-    updateRoundCounter(0);
     winnerText.textContent = "";
 }
 
 function handleChoice(humanSelection) {
-    if (roundsPlayed >= 5) askToPlayAgain();
 
     const computerSelection = getComputerChoice();
-    let result = playRound(humanSelection, computerSelection);
+    const result = playRound(humanSelection, computerSelection);
     
     updateHealth();
-    updateRoundCounter(++roundsPlayed);
+    roundsPlayed++;
 
     if (roundsPlayed === 5) {
         displayGameWinner();
-        askToPlayAgain();
+        resetGame();
     } else {
         displayRoundWinner(result);
     }

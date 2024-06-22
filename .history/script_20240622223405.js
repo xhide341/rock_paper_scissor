@@ -56,10 +56,6 @@ function updateHealth() {
     });
 }
 
-function updateRoundCounter(index) {
-    return roundCounter.textContent = "Round: " + index; 
-}
-
 function displayRoundWinner(result) {
     if (result === "human") {
         winnerText.textContent = "You won the round!";
@@ -99,7 +95,6 @@ function resetGame() {
     scores = { computer: 0, human: 0, tie: 0 };
     roundsPlayed = 0;
     updateHealth();
-    updateRoundCounter(0);
     winnerText.textContent = "";
 }
 
@@ -110,7 +105,7 @@ function handleChoice(humanSelection) {
     let result = playRound(humanSelection, computerSelection);
     
     updateHealth();
-    updateRoundCounter(++roundsPlayed);
+    roundsPlayed++;
 
     if (roundsPlayed === 5) {
         displayGameWinner();

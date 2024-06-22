@@ -49,12 +49,6 @@ h1 {
     position: relative;
 }
 
-.middle-container h2:not(.display-winner) {
-    position: absolute;
-    top: 25%;
-    transform: translateY(-50%);
-}
-
 .player-container img,
     .computer-container img {
         max-width: 100%;
@@ -100,9 +94,6 @@ h2 {
     margin: 0;
     padding: 0;
     gap: 16px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 button {

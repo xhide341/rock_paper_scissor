@@ -110,7 +110,7 @@ function handleChoice(humanSelection) {
     let result = playRound(humanSelection, computerSelection);
     
     updateHealth();
-    updateRoundCounter(++roundsPlayed);
+    updateRoundCounter(roundsPlayed++);
 
     if (roundsPlayed === 5) {
         displayGameWinner();

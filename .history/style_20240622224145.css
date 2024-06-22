@@ -10,7 +10,7 @@ body {
     color: black;
     font-family: "Roboto", sans-serif;
     padding: 16px;
-    margin: 0;
+    border: 0;
 }
 
 h1 {
@@ -46,13 +46,6 @@ h1 {
     height: 500px;
     align-items: center;
     flex: 1;
-    position: relative;
-}
-
-.middle-container h2:not(.display-winner) {
-    position: absolute;
-    top: 25%;
-    transform: translateY(-50%);
 }
 
 .player-container img,
@@ -89,8 +82,6 @@ h2 {
     margin-bottom: 36px;
     padding: 0;
     color: darkblue;
-    position: absolute;
-    bottom: 0;
 }
 
 .choices {
@@ -100,9 +91,6 @@ h2 {
     margin: 0;
     padding: 0;
     gap: 16px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 button {
