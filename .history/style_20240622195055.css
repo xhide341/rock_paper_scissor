@@ -93,15 +93,14 @@ h2 {
 button {
     display: flex;
     border-radius: 8px;
-    max-width: 150px;
-    height: auto;
-    flex-direction: column;
+    width: 150px;
+    height: 150px;
     font-size: 100px;
-    word-wrap: break-word;
     justify-content: center;
     align-items: center;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
 }
 
 button:hover {

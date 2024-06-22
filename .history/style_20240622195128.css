@@ -93,11 +93,9 @@ h2 {
 button {
     display: flex;
     border-radius: 8px;
-    max-width: 150px;
+    width: 150px;
     height: auto;
-    flex-direction: column;
     font-size: 100px;
-    word-wrap: break-word;
     justify-content: center;
     align-items: center;
     text-align: center;

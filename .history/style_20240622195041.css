@@ -88,16 +88,15 @@ h2 {
     margin: 0;
     padding: 0;
     gap: 16px;
+    flex: 1;
 }
 
 button {
     display: flex;
     border-radius: 8px;
-    max-width: 150px;
-    height: auto;
-    flex-direction: column;
+    width: 150px;
+    height: 150px;
     font-size: 100px;
-    word-wrap: break-word;
     justify-content: center;
     align-items: center;
     text-align: center;

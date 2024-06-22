@@ -93,6 +93,7 @@ h2 {
 button {
     display: flex;
     border-radius: 8px;
+    width: 150px;
     max-width: 150px;
     height: auto;
     flex-direction: column;

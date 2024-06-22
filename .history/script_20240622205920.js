@@ -1,12 +1,18 @@
-const winnerText = document.querySelector(".display-winner");
-const humanHealth = document.querySelector(".hearts-human");
-const computerHealth = document.querySelector(".hearts-computer");
-const rockButton = document.querySelector(".rock");
-const paperButton = document.querySelector(".paper");
-const scissorButton = document.querySelector(".scissor");
+// PROMPT user to choose between rock, paper, and scissor
+// IF user is done choosing, THEN
+// GENERATE random element between rock, paper, and scissor
+// IF user element beats computer element, THEN
+// add point to user, ELSE
+// add point to computer
+
+const humanHealth = document.querySelector(".hearts-human")
+const computerHealth = document.querySelector(".hearts-computer")
+const rockButton = document.querySelector(".rock")
+const paperButton = document.querySelector(".paper")
+const scissorButton = document.querySelector(".scissor")
 
 function getComputerChoice() {
-    const computerChoice = Math.floor(Math.random() * 3);
+    let computerChoice = Math.floor(Math.random() * 3);
     if (computerChoice === 1) {
         return "rock";
     } else if (computerChoice === 2) {
@@ -45,51 +51,40 @@ function playRound(humanSelection, computerSelection) {
     return;
 }
 
-function checkRound(i) {
-    if (i < 6) {
-        displayRoundWinner();
-    } else {
-        displayGameWinner();
-        i = 0;
-    }
-}
-
-function displayRoundWinner() {
+function displayWinner() {
     if (computer > human) {
-        winnerText.textContent = "Computer wins the round!";
+        alert("Computer wins the game!");
     } else if (computer < human) {
-        winnerText.textContent = "Human wins the round!";
+        alert("Human wins the game!");
     } else {
-        winnerText.textContent = "It's a tie!";
-    }
-}
-
-function displayGameWinner() {
-    if (computer > human) {
-        winnerText.textContent = "Computer won the game";
-    } else if (computer < human) {
-        winnerText.textContent = "You won the game";
-    } else {
-        winnerText.textContent = "It's a tie!";
+        alert("It's a tie!");
     }
 }
 
 let computer = 0;
 let human = 0;
 let tie = 0;
-let i = 1;
+let i = 0;
 
 rockButton.addEventListener("click", () => {
     playRound("rock", getComputerChoice());
-    checkRound(i++);
+    i++;
 });
 
 paperButton.addEventListener("click", () => {
     playRound("paper", getComputerChoice());
-    checkRound(i++);
+    i++;
 });
 
 scissorButton.addEventListener("click", () => {
     playRound("scissor", getComputerChoice());
-    checkRound(i++);
+    i++;
 });
+
+
+
+
+
+
+
+playGame();
